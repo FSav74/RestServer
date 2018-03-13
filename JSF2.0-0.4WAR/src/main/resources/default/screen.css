@@ -1,0 +1,41 @@
+
+
+/* Header styles */
+#layout-header {
+	clear:both;
+	float:left;
+	width:100%;
+	height:229px;
+}
+
+#layout-navigation {
+	float:left;
+	width:20%;
+	position:relative;
+	
+	/* height:inherit;  è la height di #containerColumn */
+	/* overflow-y:scroll;   ciò che va oltre l'altezza: diventa scrollabile*/
+}
+
+#containerColumn{
+	/*overflow:hidden;*/
+	/*height:400px;*/ 
+}
+
+#layout-content {
+	float:left;
+	width:80%;
+	position:relative;
+	
+	/* height:inherit;    è la height di #containerColumn */
+	/*overflow-y:scroll;  ciò che va oltre l'altezza: diventa scrollabile*/
+}
+
+
+#layout-footer {
+	clear:both;
+	float:left;
+	width:100%;
+	/*border-top:1px solid #000;*/
+}
+

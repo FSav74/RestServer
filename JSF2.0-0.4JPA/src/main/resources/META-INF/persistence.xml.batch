@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
+	
+	<!-- <jta-data-source>java:/bookDS</jta-data-source>  -->
+	
+		<class>it.altran.jsf.myApp.jpa.entity.Autore</class>
+		<class>it.altran.jsf.myApp.jpa.entity.CategoriaGenere</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Cliente</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Editore</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Genere</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Periodicita</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Prenotazione</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Professione</class>
+		<class>it.altran.jsf.myApp.jpa.entity.Pubblicazione</class>
+		<class>it.altran.jsf.myApp.jpa.entity.PubblicazioneAutore</class>
+		<class>it.altran.jsf.myApp.jpa.entity.PubblicazioneAutorePK</class>
+		<class>it.altran.jsf.myApp.jpa.entity.TipoPubblicazione</class>
+		<class>it.altran.jsf.myApp.jpa.entity.UserRole</class>
+		<class>it.altran.jsf.myApp.jpa.entity.User</class>
+		<!-- shouldn't be valid for java SE per specification, but it works for EclipseLink ... -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+		<!-- 
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:simpleDb;create=true" />
+			<property name="javax.persistence.jdbc.user" value="JSF2.0-0.4JPA" />
+			<property name="javax.persistence.jdbc.password" value="JSF2.0-0.4JPA" />
+		 -->	
+			
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb" />
+            <property name="javax.persistence.jdbc.user" value="saverio" />
+			<property name="javax.persistence.jdbc.password" value="saverio" />
+           
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+
+			<!-- EclipseLink should create the database schema automatically -->
+			<!-- <property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />  -->
+			
+			<property name="eclipselink.logging.level" value="SEVERE"/>				
+		</properties>
+
+	</persistence-unit>
+</persistence>

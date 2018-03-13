@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:h="http://java.sun.com/jsf/html"
+      >
+     <h:head>
+	<h:outputStylesheet  name="screen.css" library="default"/>
+    </h:head>
+    <ui:param name="contextRoot" value="#{request.contextPath}"/>
+
+	    <ui:composition>
+ 
+			<div id="page2">
+			<p><h:outputLink value="#{request.contextPath}/pages/welcome.xhtml">Welcome</h:outputLink></p>
+			<p><h:outputLink value="#{request.contextPath}/pages/search.xhtml">Search</h:outputLink></p>
+			
+			</div>
+
+ 
+	    </ui:composition>
+
+</html>

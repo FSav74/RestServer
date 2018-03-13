@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+        <h:head>
+	<h:outputStylesheet  name="screen.css" library="default"/>
+    </h:head>
+    <h:body>
+ 
+    	<ui:composition template="/pages/layout/commonLayout.xhtml">
+ 
+ 			
+    		<ui:define name="content">
+    		
+			 <h:form>
+			   <fieldset>
+				<legend>Ricerca libro/Rivista/fumetto</legend>
+				<div class="myRow">
+					<div class="myCol"><label class="title" for="name">Titolo:</label></div>
+					<div class="myCol"><h:inputText value="#{searchBean.titolo}"/></div>	
+				
+					<div class="myCol"><label  class="title">Categoria:</label></div>
+					
+					<div class="myCol">
+						<h:selectOneListbox value="#{searchBean.genereSel}" size="1">
+							<f:selectItems value="#{searchBean.listaGeneri}" var="mygenere" itemValue="#{mygenere.genereId}"  itemLabel="#{mygenere.descrizione}"    />
+						</h:selectOneListbox>
+				    </div>
+				</div>
+				<div class="myRow">
+				<h:form>
+    	 
+    	   		<h:commandButton value="Search" action="#{searchBean.search}"></h:commandButton>
+    			</h:form>
+    			
+				</div>
+			   </fieldset> 	
+			 </h:form> 	
+			 <br/>
+			<br/>
+			<br/>
+			    	
+		
+    		</ui:define>
+ 
+		  
+ 
+    	</ui:composition>
+ 
+    </h:body>
+ 
+</html>

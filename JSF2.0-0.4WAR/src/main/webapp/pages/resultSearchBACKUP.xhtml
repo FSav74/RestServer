@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+        <h:head>
+	<h:outputStylesheet  name="screen.css" library="default"/>
+
+	<h:outputStylesheet  name="css/searchAndDetails.css" library="default"/>
+	
+	
+    </h:head>
+    <h:body>
+ 
+    	<ui:composition template="/pages/layout/commonLayout.xhtml">
+ 
+ 			
+
+    		<ui:define name="content">
+    		<br/>
+			<br/>
+			<br/>
+			 <h:form>
+			  	
+					<h:dataTable  styleClass="resultTable"   value="#{searchBean.listaLibri}" var ="book"
+					columnClasses="titolo,cognomeAutore"
+					rowClasses="odd,even"
+					headerClass="head"
+					>
+					
+					
+							<h:column >
+							<f:facet name="header">TITOLO</f:facet>
+							<h:outputText value="#{book.titolo}"></h:outputText>
+							</h:column>
+						
+							<h:column>
+							<f:facet name="header">AUTORE</f:facet>
+							<h:outputText value="#{book.cognomeAutore}"></h:outputText>
+							</h:column>
+			
+	
+					</h:dataTable>
+						
+			 </h:form> 	
+			 <br/>
+			<br/>
+			<br/>
+			    	
+		
+    		</ui:define>
+ 
+		  
+ 
+    	</ui:composition>
+ 
+    </h:body>
+ 
+</html>

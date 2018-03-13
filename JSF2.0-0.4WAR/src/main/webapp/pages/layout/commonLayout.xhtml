@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+      
+     
+   
+    <h:head>
+	<h:outputStylesheet  name="default.css" library="default"/>
+	<h:outputStylesheet  name="screen.css" library="default"/>
+	<h:outputStylesheet  name="css/global.css" library="default"/>
+	<h:outputStylesheet  name="css/searchAndDetails.css" library="default"/>
+	
+	<h:outputScript  name="js/jquery-1.11.2.min.js" library="default"/>
+	<h:outputScript  name="jquery-ui-1.11.2.custom/jquery-ui.min.js" library="default"/>
+	<h:outputStylesheet  name="jquery-ui-1.11.2.custom/jquery-ui.css" library="default"/>
+    </h:head>
+    
+    <script>
+    
+   $(document).ready(function(){ 
+   		var altezzanav = $("#layout-navigation").height();
+   		var altezzacont = $("#layout-content").height();
+   		
+   		if (altezzacont > altezzanav){
+   		 
+    	$("#layout-navigation").height($("#layout-content").height());
+    	
+    	}else{
+    	$("#layout-content").height($("#layout-navigation").height());
+    	}
+ 
+   }); 
+   
+   $(window).resize(function(){
+
+    	var altezzanav = $("#layout-navigation").height();
+   		var altezzacont = $("#layout-content").height();
+   		
+   		if (altezzacont > altezzanav){
+   		 
+    	$("#layout-navigation").height($("#layout-content").height());
+    	
+    	}else{
+    	$("#layout-content").height($("#layout-navigation").height());
+    	}
+    
+   
+   });
+   
+    </script>
+ 
+    <h:body>
+ 
+
+ 
+		    <div id="layout-header" >
+			<ui:insert name="header" >
+			  <ui:include src="/pages/layout/commonHeader.xhtml" />
+			</ui:insert>
+		    </div>
+		    
+		    
+		  <div id="containerColumn">  
+		     <div id="layout-navigation" class="centraltdlayout">
+		    	<ui:insert name="navigation" >
+		    	  <ui:include src="/pages/layout/commonNavigation.xhtml" />
+		    	</ui:insert>
+	    	 </div>
+ 
+
+	    
+	    
+ 
+		    <div id="layout-content" class="centraltdlayout">
+		  	<ui:insert name="content" >
+		 	  <ui:include src="/pages/layout/commonContent.xhtml" />
+		   	</ui:insert>
+		    </div>
+		    
+		 </div>   
+	 
+		    <div id="layout-footer">
+		    	<ui:insert name="footer" >
+		    	  <ui:include src="/pages/layout/commonFooter.xhtml" />
+		    	</ui:insert>
+	    	</div>
+ 
+
+ 
+    </h:body>
+</html>
